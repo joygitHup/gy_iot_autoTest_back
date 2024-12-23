@@ -1,6 +1,8 @@
 import json
 import  requests
 from config  import apiconfig
+import allure
+@allure.title('通过ID获取名字')
 def test_api_getidbyname():
     # url='http://192.168.20.212:5500/api/system/tenant/get-id-by-name?name=CDB-IOT'
     data='CDB-IOT'
@@ -9,6 +11,7 @@ def test_api_getidbyname():
     r=requests.get(headers=eval(header),url=url).json()
     result=r['data']
     return result
+@allure.description('获取到tenanid')
 def test_api_tenantId():
     url=apiconfig.host+apiconfig.tenantIdurl+"?tenantId={tenantId}".format(tenantId=test_api_getidbyname())
     header =json.loads(apiconfig.header)
@@ -37,5 +40,6 @@ def test_api_login():
     r=requests.post(headers=eval(str(header)),url=url,data=data)
     print(r.text)
 if __name__=="__main__":
-   op=test_api_login()
+   op=test_api_getidbyname()
+   print(op)
 
