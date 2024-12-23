@@ -1,1 +1,0 @@
-{"code":0,"data":{"enableIdentityAuthCaptcha":true,"captchaEnableAfterAttempts":3,"captchaAlwaysEnable":false,"enableSmsTwoFactor":false},"msg":""}
