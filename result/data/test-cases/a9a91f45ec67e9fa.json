@@ -1,0 +1,119 @@
+{
+  "uid" : "a9a91f45ec67e9fa",
+  "name" : "test_login_corrent_userandPwd[CDAdmin-CDAdmin.123]",
+  "fullName" : "test_case.test_iot_login.test_pc_login.Test_login#test_login_corrent_userandPwd",
+  "historyId" : "60aa23725651f09e2c481ef5a6897491",
+  "time" : {
+    "start" : 1712630695792,
+    "stop" : 1712630711566,
+    "duration" : 15774
+  },
+  "description" : "登录用例",
+  "descriptionHtml" : "<p>登录用例</p>\n",
+  "status" : "broken",
+  "statusMessage" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/section/section/section/div[2]/header/div[2]/span/span/span\"}\n  (Session info: chrome=122.0.6261.129); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nStacktrace:\n\tGetHandleVerifier [0x00007FF770CBAD02+56930]\n\t(No symbol) [0x00007FF770C2F602]\n\t(No symbol) [0x00007FF770AE42E5]\n\t(No symbol) [0x00007FF770B298ED]\n\t(No symbol) [0x00007FF770B29A2C]\n\t(No symbol) [0x00007FF770B6A967]\n\t(No symbol) [0x00007FF770B4BCDF]\n\t(No symbol) [0x00007FF770B681E2]\n\t(No symbol) [0x00007FF770B4BA43]\n\t(No symbol) [0x00007FF770B1D438]\n\t(No symbol) [0x00007FF770B1E4D1]\n\tGetHandleVerifier [0x00007FF771036F8D+3711213]\n\tGetHandleVerifier [0x00007FF7710904CD+4077101]\n\tGetHandleVerifier [0x00007FF77108865F+4044735]\n\tGetHandleVerifier [0x00007FF770D59736+706710]\n\t(No symbol) [0x00007FF770C3B8DF]\n\t(No symbol) [0x00007FF770C36AC4]\n\t(No symbol) [0x00007FF770C36C1C]\n\t(No symbol) [0x00007FF770C268D4]\n\tBaseThreadInitThunk [0x00007FFF68CC7344+20]\n\tRtlUserThreadStart [0x00007FFF69F626B1+33]",
+  "statusTrace" : "self = <test_case.test_iot_login.test_pc_login.Test_login object at 0x000001F21F2C8950>\naccount = 'CDAdmin', pwd = 'CDAdmin.123'\n\n    @pytest.mark.parametrize('account,pwd',[(\"CDBAdmin\",'CDBAdmin.123'),(\"CDAdmin\",'CDBAdmin.123'),(\"CDAdmin\",'CDAdmin.123')])\n    def test_login_corrent_userandPwd(self,account,pwd):\n        self.driver.implicitly_wait(3)\n        username_ele = '//*[@id=\"form_item_account\"]'\n        self.driver.find_element(by=By.XPATH,value=username_ele).clear()\n        self.driver.find_element(by=By.XPATH,value=username_ele).send_keys(account)\n        pwd_ele = '//*[@id=\"form_item_password\"]'\n        self.driver.find_element(by=By.XPATH,value=pwd_ele).clear()\n        self.driver.find_element(by=By.XPATH,value=pwd_ele).send_keys(pwd)\n        log_btn = '//*[@id=\"app\"]/div/div/div/div/div[1]/div/form/div[4]/div/div/div/div/button'\n        self.driver.find_element(by=By.XPATH,value=log_btn).click()\n        time.sleep(2)\n    \n        self.driver.save_screenshot(SccreShort+\"\\\\b.jpg\")\n        allure.attach.file(SccreShort+\"\\\\b.JPG\",\n                           attachment_type=allure.attachment_type.JPG)\n        time.sleep(10)\n        el2='//*[@id=\"app\"]/section/section/section/div[2]/header/div[2]/span/span/span'\n>       self.driver.find_element(by=By.XPATH,value=el2).click()\n\ntest_case\\test_iot_login\\test_pc_login.py:32: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nD:\\apploadpath\\pythonPath\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:741: in find_element\n    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]\nD:\\apploadpath\\pythonPath\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:347: in execute\n    self.error_handler.check_response(response)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x000001F21F29D0D0>\nresponse = {'status': 404, 'value': '{\"value\":{\"error\":\"no such element\",\"message\":\"no such element: Unable to locate element: {\\...07FF770C268D4]\\\\n\\\\tBaseThreadInitThunk [0x00007FFF68CC7344+20]\\\\n\\\\tRtlUserThreadStart [0x00007FFF69F626B1+33]\\\\n\"}}'}\n\n    def check_response(self, response: Dict[str, Any]) -> None:\n        \"\"\"Checks that a JSON response from the WebDriver does not have an\n        error.\n    \n        :Args:\n         - response - The JSON response from the WebDriver server as a dictionary\n           object.\n    \n        :Raises: If the response contains an error message.\n        \"\"\"\n        status = response.get(\"status\", None)\n        if not status or status == ErrorCode.SUCCESS:\n            return\n        value = None\n        message = response.get(\"message\", \"\")\n        screen: str = response.get(\"screen\", \"\")\n        stacktrace = None\n        if isinstance(status, int):\n            value_json = response.get(\"value\", None)\n            if value_json and isinstance(value_json, str):\n                import json\n    \n                try:\n                    value = json.loads(value_json)\n                    if len(value) == 1:\n                        value = value[\"value\"]\n                    status = value.get(\"error\", None)\n                    if not status:\n                        status = value.get(\"status\", ErrorCode.UNKNOWN_ERROR)\n                        message = value.get(\"value\") or value.get(\"message\")\n                        if not isinstance(message, str):\n                            value = message\n                            message = message.get(\"message\")\n                    else:\n                        message = value.get(\"message\", None)\n                except ValueError:\n                    pass\n    \n        exception_class: Type[WebDriverException]\n        e = ErrorCode()\n        error_codes = [item for item in dir(e) if not item.startswith(\"__\")]\n        for error_code in error_codes:\n            error_info = getattr(ErrorCode, error_code)\n            if isinstance(error_info, list) and status in error_info:\n                exception_class = getattr(ExceptionMapping, error_code, WebDriverException)\n                break\n        else:\n            exception_class = WebDriverException\n    \n        if not value:\n            value = response[\"value\"]\n        if isinstance(value, str):\n            raise exception_class(value)\n        if message == \"\" and \"message\" in value:\n            message = value[\"message\"]\n    \n        screen = None  # type: ignore[assignment]\n        if \"screen\" in value:\n            screen = value[\"screen\"]\n    \n        stacktrace = None\n        st_value = value.get(\"stackTrace\") or value.get(\"stacktrace\")\n        if st_value:\n            if isinstance(st_value, str):\n                stacktrace = st_value.split(\"\\n\")\n            else:\n                stacktrace = []\n                try:\n                    for frame in st_value:\n                        line = frame.get(\"lineNumber\", \"\")\n                        file = frame.get(\"fileName\", \"<anonymous>\")\n                        if line:\n                            file = f\"{file}:{line}\"\n                        meth = frame.get(\"methodName\", \"<anonymous>\")\n                        if \"className\" in frame:\n                            meth = f\"{frame['className']}.{meth}\"\n                        msg = \"    at %s (%s)\"\n                        msg = msg % (meth, file)\n                        stacktrace.append(msg)\n                except TypeError:\n                    pass\n        if exception_class == UnexpectedAlertPresentException:\n            alert_text = None\n            if \"data\" in value:\n                alert_text = value[\"data\"].get(\"text\")\n            elif \"alert\" in value:\n                alert_text = value[\"alert\"].get(\"text\")\n            raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here\n>       raise exception_class(message, screen, stacktrace)\nE       selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/section/section/section/div[2]/header/div[2]/span/span/span\"}\nE         (Session info: chrome=122.0.6261.129); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nE       Stacktrace:\nE       \tGetHandleVerifier [0x00007FF770CBAD02+56930]\nE       \t(No symbol) [0x00007FF770C2F602]\nE       \t(No symbol) [0x00007FF770AE42E5]\nE       \t(No symbol) [0x00007FF770B298ED]\nE       \t(No symbol) [0x00007FF770B29A2C]\nE       \t(No symbol) [0x00007FF770B6A967]\nE       \t(No symbol) [0x00007FF770B4BCDF]\nE       \t(No symbol) [0x00007FF770B681E2]\nE       \t(No symbol) [0x00007FF770B4BA43]\nE       \t(No symbol) [0x00007FF770B1D438]\nE       \t(No symbol) [0x00007FF770B1E4D1]\nE       \tGetHandleVerifier [0x00007FF771036F8D+3711213]\nE       \tGetHandleVerifier [0x00007FF7710904CD+4077101]\nE       \tGetHandleVerifier [0x00007FF77108865F+4044735]\nE       \tGetHandleVerifier [0x00007FF770D59736+706710]\nE       \t(No symbol) [0x00007FF770C3B8DF]\nE       \t(No symbol) [0x00007FF770C36AC4]\nE       \t(No symbol) [0x00007FF770C36C1C]\nE       \t(No symbol) [0x00007FF770C268D4]\nE       \tBaseThreadInitThunk [0x00007FFF68CC7344+20]\nE       \tRtlUserThreadStart [0x00007FFF69F626B1+33]\n\nD:\\apploadpath\\pythonPath\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:229: NoSuchElementException",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "_xunit_setup_class_fixture_Test_login",
+    "time" : {
+      "start" : 1712630660883,
+      "stop" : 1712630663921,
+      "duration" : 3038
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "登录用例",
+    "status" : "broken",
+    "statusMessage" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/section/section/section/div[2]/header/div[2]/span/span/span\"}\n  (Session info: chrome=122.0.6261.129); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nStacktrace:\n\tGetHandleVerifier [0x00007FF770CBAD02+56930]\n\t(No symbol) [0x00007FF770C2F602]\n\t(No symbol) [0x00007FF770AE42E5]\n\t(No symbol) [0x00007FF770B298ED]\n\t(No symbol) [0x00007FF770B29A2C]\n\t(No symbol) [0x00007FF770B6A967]\n\t(No symbol) [0x00007FF770B4BCDF]\n\t(No symbol) [0x00007FF770B681E2]\n\t(No symbol) [0x00007FF770B4BA43]\n\t(No symbol) [0x00007FF770B1D438]\n\t(No symbol) [0x00007FF770B1E4D1]\n\tGetHandleVerifier [0x00007FF771036F8D+3711213]\n\tGetHandleVerifier [0x00007FF7710904CD+4077101]\n\tGetHandleVerifier [0x00007FF77108865F+4044735]\n\tGetHandleVerifier [0x00007FF770D59736+706710]\n\t(No symbol) [0x00007FF770C3B8DF]\n\t(No symbol) [0x00007FF770C36AC4]\n\t(No symbol) [0x00007FF770C36C1C]\n\t(No symbol) [0x00007FF770C268D4]\n\tBaseThreadInitThunk [0x00007FFF68CC7344+20]\n\tRtlUserThreadStart [0x00007FFF69F626B1+33]",
+    "statusTrace" : "self = <test_case.test_iot_login.test_pc_login.Test_login object at 0x000001F21F2C8950>\naccount = 'CDAdmin', pwd = 'CDAdmin.123'\n\n    @pytest.mark.parametrize('account,pwd',[(\"CDBAdmin\",'CDBAdmin.123'),(\"CDAdmin\",'CDBAdmin.123'),(\"CDAdmin\",'CDAdmin.123')])\n    def test_login_corrent_userandPwd(self,account,pwd):\n        self.driver.implicitly_wait(3)\n        username_ele = '//*[@id=\"form_item_account\"]'\n        self.driver.find_element(by=By.XPATH,value=username_ele).clear()\n        self.driver.find_element(by=By.XPATH,value=username_ele).send_keys(account)\n        pwd_ele = '//*[@id=\"form_item_password\"]'\n        self.driver.find_element(by=By.XPATH,value=pwd_ele).clear()\n        self.driver.find_element(by=By.XPATH,value=pwd_ele).send_keys(pwd)\n        log_btn = '//*[@id=\"app\"]/div/div/div/div/div[1]/div/form/div[4]/div/div/div/div/button'\n        self.driver.find_element(by=By.XPATH,value=log_btn).click()\n        time.sleep(2)\n    \n        self.driver.save_screenshot(SccreShort+\"\\\\b.jpg\")\n        allure.attach.file(SccreShort+\"\\\\b.JPG\",\n                           attachment_type=allure.attachment_type.JPG)\n        time.sleep(10)\n        el2='//*[@id=\"app\"]/section/section/section/div[2]/header/div[2]/span/span/span'\n>       self.driver.find_element(by=By.XPATH,value=el2).click()\n\ntest_case\\test_iot_login\\test_pc_login.py:32: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nD:\\apploadpath\\pythonPath\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:741: in find_element\n    return self.execute(Command.FIND_ELEMENT, {\"using\": by, \"value\": value})[\"value\"]\nD:\\apploadpath\\pythonPath\\Lib\\site-packages\\selenium\\webdriver\\remote\\webdriver.py:347: in execute\n    self.error_handler.check_response(response)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x000001F21F29D0D0>\nresponse = {'status': 404, 'value': '{\"value\":{\"error\":\"no such element\",\"message\":\"no such element: Unable to locate element: {\\...07FF770C268D4]\\\\n\\\\tBaseThreadInitThunk [0x00007FFF68CC7344+20]\\\\n\\\\tRtlUserThreadStart [0x00007FFF69F626B1+33]\\\\n\"}}'}\n\n    def check_response(self, response: Dict[str, Any]) -> None:\n        \"\"\"Checks that a JSON response from the WebDriver does not have an\n        error.\n    \n        :Args:\n         - response - The JSON response from the WebDriver server as a dictionary\n           object.\n    \n        :Raises: If the response contains an error message.\n        \"\"\"\n        status = response.get(\"status\", None)\n        if not status or status == ErrorCode.SUCCESS:\n            return\n        value = None\n        message = response.get(\"message\", \"\")\n        screen: str = response.get(\"screen\", \"\")\n        stacktrace = None\n        if isinstance(status, int):\n            value_json = response.get(\"value\", None)\n            if value_json and isinstance(value_json, str):\n                import json\n    \n                try:\n                    value = json.loads(value_json)\n                    if len(value) == 1:\n                        value = value[\"value\"]\n                    status = value.get(\"error\", None)\n                    if not status:\n                        status = value.get(\"status\", ErrorCode.UNKNOWN_ERROR)\n                        message = value.get(\"value\") or value.get(\"message\")\n                        if not isinstance(message, str):\n                            value = message\n                            message = message.get(\"message\")\n                    else:\n                        message = value.get(\"message\", None)\n                except ValueError:\n                    pass\n    \n        exception_class: Type[WebDriverException]\n        e = ErrorCode()\n        error_codes = [item for item in dir(e) if not item.startswith(\"__\")]\n        for error_code in error_codes:\n            error_info = getattr(ErrorCode, error_code)\n            if isinstance(error_info, list) and status in error_info:\n                exception_class = getattr(ExceptionMapping, error_code, WebDriverException)\n                break\n        else:\n            exception_class = WebDriverException\n    \n        if not value:\n            value = response[\"value\"]\n        if isinstance(value, str):\n            raise exception_class(value)\n        if message == \"\" and \"message\" in value:\n            message = value[\"message\"]\n    \n        screen = None  # type: ignore[assignment]\n        if \"screen\" in value:\n            screen = value[\"screen\"]\n    \n        stacktrace = None\n        st_value = value.get(\"stackTrace\") or value.get(\"stacktrace\")\n        if st_value:\n            if isinstance(st_value, str):\n                stacktrace = st_value.split(\"\\n\")\n            else:\n                stacktrace = []\n                try:\n                    for frame in st_value:\n                        line = frame.get(\"lineNumber\", \"\")\n                        file = frame.get(\"fileName\", \"<anonymous>\")\n                        if line:\n                            file = f\"{file}:{line}\"\n                        meth = frame.get(\"methodName\", \"<anonymous>\")\n                        if \"className\" in frame:\n                            meth = f\"{frame['className']}.{meth}\"\n                        msg = \"    at %s (%s)\"\n                        msg = msg % (meth, file)\n                        stacktrace.append(msg)\n                except TypeError:\n                    pass\n        if exception_class == UnexpectedAlertPresentException:\n            alert_text = None\n            if \"data\" in value:\n                alert_text = value[\"data\"].get(\"text\")\n            elif \"alert\" in value:\n                alert_text = value[\"alert\"].get(\"text\")\n            raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here\n>       raise exception_class(message, screen, stacktrace)\nE       selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/section/section/section/div[2]/header/div[2]/span/span/span\"}\nE         (Session info: chrome=122.0.6261.129); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nE       Stacktrace:\nE       \tGetHandleVerifier [0x00007FF770CBAD02+56930]\nE       \t(No symbol) [0x00007FF770C2F602]\nE       \t(No symbol) [0x00007FF770AE42E5]\nE       \t(No symbol) [0x00007FF770B298ED]\nE       \t(No symbol) [0x00007FF770B29A2C]\nE       \t(No symbol) [0x00007FF770B6A967]\nE       \t(No symbol) [0x00007FF770B4BCDF]\nE       \t(No symbol) [0x00007FF770B681E2]\nE       \t(No symbol) [0x00007FF770B4BA43]\nE       \t(No symbol) [0x00007FF770B1D438]\nE       \t(No symbol) [0x00007FF770B1E4D1]\nE       \tGetHandleVerifier [0x00007FF771036F8D+3711213]\nE       \tGetHandleVerifier [0x00007FF7710904CD+4077101]\nE       \tGetHandleVerifier [0x00007FF77108865F+4044735]\nE       \tGetHandleVerifier [0x00007FF770D59736+706710]\nE       \t(No symbol) [0x00007FF770C3B8DF]\nE       \t(No symbol) [0x00007FF770C36AC4]\nE       \t(No symbol) [0x00007FF770C36C1C]\nE       \t(No symbol) [0x00007FF770C268D4]\nE       \tBaseThreadInitThunk [0x00007FFF68CC7344+20]\nE       \tRtlUserThreadStart [0x00007FFF69F626B1+33]\n\nD:\\apploadpath\\pythonPath\\Lib\\site-packages\\selenium\\webdriver\\remote\\errorhandler.py:229: NoSuchElementException",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "12e5accd5bcd44e4",
+      "name" : "f3770214-4d4c-4175-baa8-75c187bb3d71-attachment.jpg",
+      "source" : "12e5accd5bcd44e4.jpg",
+      "type" : "image/jpg",
+      "size" : 1689600
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 1,
+    "stepsCount" : 0,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "_xunit_setup_class_fixture_Test_login::0",
+    "time" : {
+      "start" : 1712630711612,
+      "stop" : 1712630713764,
+      "duration" : 2152
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test_case.test_iot_login"
+  }, {
+    "name" : "suite",
+    "value" : "test_pc_login"
+  }, {
+    "name" : "subSuite",
+    "value" : "Test_login"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-SQSUSVC"
+  }, {
+    "name" : "thread",
+    "value" : "9740-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_case.test_iot_login.test_pc_login"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "account",
+    "value" : "'CDAdmin'"
+  }, {
+    "name" : "pwd",
+    "value" : "'CDAdmin.123'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "a9a91f45ec67e9fa.json",
+  "parameterValues" : [ "'CDAdmin'", "'CDAdmin.123'" ]
+}

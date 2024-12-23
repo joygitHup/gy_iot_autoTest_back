@@ -1,0 +1,39 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"app\"]/section/section/section/div[2]/header/div[2]/span/span/span\"}\n  (Session info: chrome=122.0.6261.129); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception\nStacktrace:\n\tGetHandleVerifier [0x00007FF770CBAD02+56930]\n\t(No symbol) [0x00007FF770C2F602]\n\t(No symbol) [0x00007FF770AE42E5]\n\t(No symbol) [0x00007FF770B298ED]\n\t(No symbol) [0x00007FF770B29A2C]\n\t(No symbol) [0x00007FF770B6A967]\n\t(No symbol) [0x00007FF770B4BCDF]\n\t(No symbol) [0x00007FF770B681E2]\n\t(No symbol) [0x00007FF770B4BA43]\n\t(No symbol) [0x00007FF770B1D438]\n\t(No symbol) [0x00007FF770B1E4D1]\n\tGetHandleVerifier [0x00007FF771036F8D+3711213]\n\tGetHandleVerifier [0x00007FF7710904CD+4077101]\n\tGetHandleVerifier [0x00007FF77108865F+4044735]\n\tGetHandleVerifier [0x00007FF770D59736+706710]\n\t(No symbol) [0x00007FF770C3B8DF]\n\t(No symbol) [0x00007FF770C36AC4]\n\t(No symbol) [0x00007FF770C36C1C]\n\t(No symbol) [0x00007FF770C268D4]\n\tBaseThreadInitThunk [0x00007FFF68CC7344+20]\n\tRtlUserThreadStart [0x00007FFF69F626B1+33]",
+      "children" : [ {
+        "name" : "test_login_corrent_userandPwd[CDAdmin-CDBAdmin.123]",
+        "uid" : "2cdc7bc16946f52c",
+        "parentUid" : "c889d011193db66b8fe40bc6b928badf",
+        "status" : "broken",
+        "time" : {
+          "start" : 1712630679551,
+          "stop" : 1712630695572,
+          "duration" : 16021
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "'CDAdmin'", "'CDBAdmin.123'" ]
+      }, {
+        "name" : "test_login_corrent_userandPwd[CDAdmin-CDAdmin.123]",
+        "uid" : "a9a91f45ec67e9fa",
+        "parentUid" : "c889d011193db66b8fe40bc6b928badf",
+        "status" : "broken",
+        "time" : {
+          "start" : 1712630695792,
+          "stop" : 1712630711566,
+          "duration" : 15774
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "'CDAdmin'", "'CDAdmin.123'" ]
+      } ],
+      "uid" : "c889d011193db66b8fe40bc6b928badf"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
+}
