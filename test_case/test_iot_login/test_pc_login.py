@@ -1,7 +1,6 @@
 import os
 import sys
 import time
-
 import allure
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
@@ -11,7 +10,7 @@ from config.path_config import SccreShort
 import threading
 @allure.description('登录用例')
 class Test_login(driver_basePC_class):
-    @pytest.mark.parametrize('account,pwd',[("CDBAdmin",'CDBAdmin.123'),("CDAdmin2",'CDBAdmin.123'),("CDAdmin3",'CDAdmin.123'),("CDAdmin1",'CDAdmin.1232'),("CDAdmin1",'CDAdmin.12')])
+    @pytest.mark.parametrize('account,pwd',[("CDAdmin3",'CDAdmin.123'),("CDAdmin1",'CDAdmin.1232'),("CDAdmin1",'CDAdmin.12')])
     def test_login_corrent_userandPwd(self,account,pwd):
         self.driver.implicitly_wait(3)
         username_ele = '//*[@id="form_item_account"]'

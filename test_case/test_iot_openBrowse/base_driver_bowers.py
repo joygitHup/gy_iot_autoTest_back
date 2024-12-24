@@ -5,8 +5,9 @@ from selenium.webdriver.chrome.service import Service
 class driver_basePC_class():
     @classmethod
     def setup_class(self):
-        #为Linux准别
+        #为Linux准备
         service = Service(executable_path='/home/test/workspace/apploadpath/chromedriverPath/chrome-linux64/chromedriver')
+        #本地测试 用一下代码需要在 webdriver.Chrome()注释掉servervice
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument('--headless')  # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
         chrome_options.add_argument('--no-sandbox')  # 解决DevToolsActivePort文件不存在的报错
