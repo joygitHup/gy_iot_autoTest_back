@@ -16,7 +16,7 @@ class driver_basePC_class():
         options.add_argument('--headless')  # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
         options.add_argument('--no-sandbox')  # 解决DevToolsActivePort文件不存在的报错
         options.add_argument('--disable-dev-shm-usage')  # 可以不加这一条
-        self.driver =Chrome(options=options,executable_path='/home/apploadpath/chromedriverPath/chrome-linux64')
+        self.driver =webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
         self.driver.get("http://192.168.20.212:5500/#/home")
         self.driver.maximize_window()
 
