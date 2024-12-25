@@ -19,7 +19,7 @@ class Test_login(driver_basePC_class):
         pwd_ele = '//*[@id="form_item_password"]'
         self.driver.find_element(by=By.XPATH,value=pwd_ele).clear()
         self.driver.find_element(by=By.XPATH,value=pwd_ele).send_keys(pwd)
-        log_btn = '//*[@id="app"]/div/div/div/div/div[1]/div/form/div[4]/div/div/div/div/button'
+        log_btn = '//*[@id="app"]/div/div/div[1]/div/form/div[4]/div/div/div/div/button'
         self.driver.find_element(by=By.XPATH,value=log_btn).click()
         time.sleep(2)
         self.driver.save_screenshot(SccreShort+"\\b.jpg")
