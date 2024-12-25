@@ -25,14 +25,14 @@ class Test_login(driver_basePC_class):
         time.sleep(2)
         self.driver.save_screenshot(SccreShort+"/b.jpg")
         # allure.attach.file(SccreShort+"/b.JPG",attachment_type=allure.attachment_type.JPG)
-        time.sleep(10)
-        el2='//*[@id="app"]/section/section/section/div[2]/header/div[2]/span/span/span'
-        self.driver.find_element(by=By.XPATH,value=el2).click()
-        el3='//*[@id="htmlRoot"]/body/div[3]/div/div/ul/li[2]'
-        self.driver.find_element(by=By.XPATH,value=el3).click()
-        time.sleep(3)
-        el4='//*[@id="htmlRoot"]/body/div[5]/div/div[2]/div/div[2]/div/div/div[2]/button[2]/span'
-        self.driver.find_element(by=By.XPATH,value=el4).click()
+        # time.sleep(10)
+        # el2='//*[@id="app"]/section/section/section/div[2]/header/div[2]/span/span/span'
+        # self.driver.find_element(by=By.XPATH,value=el2).click()
+        # el3='//*[@id="htmlRoot"]/body/div[3]/div/div/ul/li[2]'
+        # self.driver.find_element(by=By.XPATH,value=el3).click()
+        # time.sleep(3)
+        # el4='//*[@id="htmlRoot"]/body/div[5]/div/div[2]/div/div[2]/div/div/div[2]/button[2]/span'
+        # self.driver.find_element(by=By.XPATH,value=el4).click()
 
 
 if __name__=="__main__":
