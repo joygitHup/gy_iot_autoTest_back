@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="05f2f491-e6d7-4bd5-a131-d65909dd5dfb" name="更改" comment="1.新增一条登录用例">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_case/test_iot_openBrowse/base_driver_bowers.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_iot_openBrowse/base_driver_bowers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +65,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/devlopePath/gy_iot_autoTest_back",
+    "last_opened_file_path": "D:/devlopePath/auoPlantform",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -223,7 +224,7 @@
       <workItem from="1732764214556" duration="112000" />
       <workItem from="1734684654802" duration="2062000" />
       <workItem from="1734918803283" duration="2249000" />
-      <workItem from="1734924145399" duration="10585000" />
+      <workItem from="1734924145399" duration="13630000" />
     </task>
     <task id="LOCAL-00001" summary="1.新增一条登录用例">
       <option name="closed" value="true" />
@@ -233,7 +234,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734684928378</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="1.新增一条登录用例">
+      <option name="closed" value="true" />
+      <created>1735034626444</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1735034626444</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
