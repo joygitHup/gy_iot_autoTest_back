@@ -12,7 +12,7 @@ class driver_basePC_class():
         #为Linux准备
         # service = ChromeService(ChromeDriverManager().install())
         #本地测试 用一下代码需要在 webdriver.Chrome()注释掉servervice
-        chrome_path="/home/apploadpath/chromedriverPath/chrome-linux64/chrome"
+        chrome_path="/home/apploadpath/chromedriverPath/chrome-linux64/chrome/binary"
         options =Options()
         options.add_argument('--headless')  # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
         options.add_argument('--no-sandbox')  # 解决DevToolsActivePort文件不存在的报错
