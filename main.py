@@ -9,4 +9,4 @@ def creat_suite():
     return suiteTest_defaultTestLoader
 suite = creat_suite()
 if __name__ == "__main__":
-    pytest.main([r'--alluredir={}'.format(report_path)+r'--clean-alluredir'])
+    pytest.main(['--clean-alluredir','--alluredir={}'.format(report_path)])
