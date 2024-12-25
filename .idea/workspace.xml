@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05f2f491-e6d7-4bd5-a131-d65909dd5dfb" name="更改" comment="1.新增一条登录用例" />
+    <list default="true" id="05f2f491-e6d7-4bd5-a131-d65909dd5dfb" name="更改" comment="1.新增一条登录用例">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/path_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/path_config.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +81,7 @@
       <recent name="D:\devlopePath\gy_iot_autoTest\result" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.base_driver_bowers">
+  <component name="RunManager" selected="Python.path_config">
     <configuration name="base_driver_bowers" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="gy_iot_autoTest" />
       <option name="ENV_FILES" value="" />
@@ -125,8 +128,8 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="this" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="gy_iot_autoTest" />
+    <configuration name="path_config" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="gy_iot_autoTest_back" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -134,12 +137,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/config" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_case/this.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/config/path_config.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -186,11 +189,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.path_config" />
         <item itemvalue="Python 测试.pytest (test_iot_api_login_corrent.py 内)" />
         <item itemvalue="Python 测试.test_iot_api_login_corrent.test_api_getidbyname 的 pytest" />
         <item itemvalue="Python.base_driver_bowers" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.this" />
       </list>
     </recent_temporary>
   </component>
@@ -221,7 +224,7 @@
       <workItem from="1732764214556" duration="112000" />
       <workItem from="1734684654802" duration="2062000" />
       <workItem from="1734918803283" duration="2249000" />
-      <workItem from="1734924145399" duration="14913000" />
+      <workItem from="1734924145399" duration="15640000" />
     </task>
     <task id="LOCAL-00001" summary="1.新增一条登录用例">
       <option name="closed" value="true" />
@@ -253,6 +256,7 @@
     <SUITE FILE_PATH="coverage/gy_iot_autoTest$main.coverage" NAME="main 覆盖结果" MODIFIED="1717383768126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gy_iot_autoTest$pytest__test_iot_api_login_corrent_py__.coverage" NAME="pytest (test_iot_api_login_corrent.py 内) 覆盖结果" MODIFIED="1731383037584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_iot_api_login" />
     <SUITE FILE_PATH="coverage/gy_iot_autoTest$path_config.coverage" NAME="path_config 覆盖结果" MODIFIED="1716262978282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/config" />
+    <SUITE FILE_PATH="coverage/gy_iot_autoTest_back$path_config.coverage" NAME="path_config 覆盖结果" MODIFIED="1735099602240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/config" />
     <SUITE FILE_PATH="coverage/gy_iot_autoTest$this.coverage" NAME="this 覆盖结果" MODIFIED="1716263275726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case" />
     <SUITE FILE_PATH="coverage/gy_iot_autoTest$test_iot_api_login_corrent_test_api_getidbyname__pytest.coverage" NAME="test_iot_api_login_corrent.test_api_getidbyname 的 pytest 覆盖结果" MODIFIED="1731382700693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_iot_api_login" />
     <SUITE FILE_PATH="coverage/gy_iot_autoTest$base_driver_bowers.coverage" NAME="base_driver_bowers 覆盖结果" MODIFIED="1717385951415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_case/test_iot_openBrowse" />

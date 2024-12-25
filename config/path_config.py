@@ -9,7 +9,7 @@ alluredir_path=report_save_path+r'/gy_iot_autoTest_back/report'
 test_case=report_save_path+r'/gy_iot_autoTest_back/test_case'
 SccreShort=report_save_path+r'/gy_iot_autoTest_back/img'
 
-print(test_case)
+print(report_save_path)
 
 
 
