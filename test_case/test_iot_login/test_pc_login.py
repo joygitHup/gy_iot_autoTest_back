@@ -10,7 +10,7 @@ from config.path_config import SccreShort
 import threading
 @allure.description('登录用例')
 class Test_login(driver_basePC_class):
-    @pytest.mark.parametrize('account,pwd',[("CDAdmin1",'CDAdmin.124')])
+    @pytest.mark.parametrize('account,pwd',[("CDAdmin1",'CDAdmin.124'),("CDAdmin",'CDAdmin.123'),("CDAdmin9",'CDAdmin.124')])
     def test_login_corrent_userandPwd(self,account,pwd):
         self.driver.implicitly_wait(3)
         username_ele = '//*[@id="form_item_account"]'
