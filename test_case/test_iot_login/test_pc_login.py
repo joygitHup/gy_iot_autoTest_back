@@ -23,8 +23,8 @@ class Test_login(driver_basePC_class):
         log_btn = '//*[@id="app"]/div/div/div[1]/div/form/div[4]/div/div/div/div/button'
         self.driver.find_element(by=By.XPATH,value=log_btn).click()
         time.sleep(2)
-        self.driver.save_screenshot(SccreShort+"\\b.jpg")
-        allure.attach.file(SccreShort+"\\b.JPG",
+        self.driver.save_screenshot(SccreShort+"/b.jpg")
+        allure.attach.file(SccreShort+"/b.JPG",
                            attachment_type=allure.attachment_type.JPG)
         time.sleep(10)
         el2='//*[@id="app"]/section/section/section/div[2]/header/div[2]/span/span/span'
