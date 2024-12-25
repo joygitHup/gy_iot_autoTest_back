@@ -11,7 +11,6 @@ class driver_basePC_class():
     def setup_class(self):
         #为Linux准备
         chrome_path = "/home/apploadpath/chromedriverPath/chrome-linux64/chrome"
-
         options =Options()
         options.add_argument('--headless')  # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
         options.add_argument('--no-sandbox')  # 解决DevToolsActivePort文件不存在的报错
@@ -25,9 +24,9 @@ class driver_basePC_class():
     @classmethod
     def teardown_class(self):
         self.driver.quit()
-
-if __name__=="__main__":
-    op=driver_basePC_class()
-    op.setup_class()
+#
+# if __name__=="__main__":
+#     op=driver_basePC_class()
+#     op.setup_class()
 
 

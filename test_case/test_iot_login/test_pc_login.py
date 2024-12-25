@@ -35,10 +35,10 @@ class Test_login(driver_basePC_class):
         # self.driver.find_element(by=By.XPATH,value=el4).click()
 
 
-if __name__=="__main__":
-    op=Test_login
-    # op.test_login_corrent_userandPwd()
-    op.testposition()
+# if __name__=="__main__":
+#     op=Test_login
+#     # op.test_login_corrent_userandPwd()
+#     op.testposition()
     # t1=threading.Thread(target=Test_login.test_login_corrent_userandPwd)
     # t2=threading.Thread(target=Test_login.test_logout_current_user)
     # t1.start()
