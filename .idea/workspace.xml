@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05f2f491-e6d7-4bd5-a131-d65909dd5dfb" name="更改" comment="1.新增一条登录用例">
-      <change afterPath="$PROJECT_DIR$/allure.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_case/test_iot_login/test_pc_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_case/test_iot_login/test_pc_login.py" afterDir="false" />
     </list>
@@ -225,7 +224,7 @@
       <workItem from="1732764214556" duration="112000" />
       <workItem from="1734684654802" duration="2062000" />
       <workItem from="1734918803283" duration="2249000" />
-      <workItem from="1734924145399" duration="25198000" />
+      <workItem from="1734924145399" duration="25987000" />
     </task>
     <task id="LOCAL-00001" summary="1.新增一条登录用例">
       <option name="closed" value="true" />
